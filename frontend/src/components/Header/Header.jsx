@@ -7,7 +7,6 @@ import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 import { useDispatch } from "react-redux";
 import { logout } from "../../utils/Store/authSlice";
 import useNotify from "../../hooks/useNotify";
-import { MenuIcon } from "lucide-react";
 
 export default Header = () => {
   const [active, setActive] = useState(null);
