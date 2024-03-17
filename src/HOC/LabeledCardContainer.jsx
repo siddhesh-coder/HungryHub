@@ -1,4 +1,4 @@
-export default LabeledCardContainer = (CardContainer) => {
+const LabeledCardContainer = (CardContainer) => {
   return (props) => {
     return (
       <div className="relative">
@@ -15,3 +15,5 @@ export default LabeledCardContainer = (CardContainer) => {
 };
 
 <button className="">Shimmer</button>;
+
+export default LabeledCardContainer;

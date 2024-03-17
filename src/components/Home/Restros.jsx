@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import LabeledCardContainer from "../../HOC/LabeledCardContainer";
 import Filter from "./Filter";
 
-export default Restros = ({ resList }) => {
+const Restros = ({ resList }) => {
   const [resLists, setResList] = useState([]);  
 
   useEffect(() => {
@@ -41,3 +41,5 @@ export default Restros = ({ resList }) => {
     </>
   );
 };
+
+export default Restros;

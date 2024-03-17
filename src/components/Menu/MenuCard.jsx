@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MenuCardList from "./MenuCardList";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-export default MenuCard = ({ downmenu, isOpen, setShowIndex }) => {
+const MenuCard = ({ downmenu, isOpen, setShowIndex }) => {
   const [titleAccordion, setTitleAccordion] = useState("");
   const [itemsCard, setItemsCard] = useState([]);
 
@@ -39,3 +39,5 @@ export default MenuCard = ({ downmenu, isOpen, setShowIndex }) => {
     </>
   );
 };
+
+export default MenuCard;

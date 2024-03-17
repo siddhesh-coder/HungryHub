@@ -1,7 +1,7 @@
 import React from "react";
 import { FOOD_MENU } from "../../utils/constants";
 
-export default ItemImg = ({img}) => {
+const ItemImg = ({img}) => {
   return (
     <div className="flex-shrink-0 w-24 h-24 overflow-hidden border border-gray-200 rounded-md">
       <img
@@ -12,3 +12,5 @@ export default ItemImg = ({img}) => {
     </div>
   );
 };
+
+export default ItemImg;

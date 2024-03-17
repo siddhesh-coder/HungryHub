@@ -13,7 +13,7 @@ const initialValues = {
   confirmPassword: "",
 };
 
-export default function SignUp() {
+const SignUp = () => {
   const navigate = useNavigate();
   const notify = useNotify();
   const Formik = useFormik({
@@ -135,3 +135,5 @@ export default function SignUp() {
     </>
   );
 }
+
+export default SignUp;

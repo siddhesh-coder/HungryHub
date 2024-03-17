@@ -6,7 +6,7 @@ import { removeItem } from "../../utils/Store/cartSlice";
 import { useDispatch } from "react-redux";
 import useNotify from "../../hooks/useNotify";
 
-export default CartItemInfo = ({ name, price, id, qty }) => {
+const CartItemInfo = ({ name, price, id, qty }) => {
   const dispatch = useDispatch();
   const notify = useNotify();
 
@@ -60,3 +60,5 @@ export default CartItemInfo = ({ name, price, id, qty }) => {
     </div>
   );
 };
+
+export default CartItemInfo;

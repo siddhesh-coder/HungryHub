@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-export default Greeting = () => {
+const Greeting = () => {
   const [userName, setUserName] = useState("");
   const isAuthenticated = useSelector((store) => store.auth.isAuthenticated);
 
@@ -16,3 +16,5 @@ export default Greeting = () => {
     </div>
   );
 };
+
+export default Greeting;

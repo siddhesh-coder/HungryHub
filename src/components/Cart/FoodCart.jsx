@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleOpenCart } from "../../utils/Store/toggleCartSlice";
 import CartContainer from "./CartContainer.jsx";
 
-export default function FoodCart() {
+const FoodCart = () => {
   const dispatch = useDispatch();
   const openCart = useSelector((store) => store.openCart.open);
 
@@ -50,3 +50,5 @@ export default function FoodCart() {
     </Transition.Root>
   );
 }
+
+export default FoodCart;

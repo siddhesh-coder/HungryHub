@@ -3,7 +3,7 @@ import Shimmer from "../Shimmers/Shimmer";
 import CardContainer from "./CardContainer";
 import { Link } from "react-router-dom";
 
-export default CategoryRestroList = ({category}) => {
+const CategoryRestroList = ({category}) => {
   return (
     <div className="flex flex-wrap">
       {category.length === 0 ? (
@@ -26,3 +26,5 @@ export default CategoryRestroList = ({category}) => {
     </div>
   );
 };
+
+export default CategoryRestroList;

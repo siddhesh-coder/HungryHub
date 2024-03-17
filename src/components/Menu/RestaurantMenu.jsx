@@ -6,7 +6,7 @@ import MenuCard from "./MenuCard";
 import FoodLoader from "../Home/FoodLoader";
 import useMenu from "../../hooks/useMenu";
 
-export default RestaurantMenu = () => {
+const RestaurantMenu = () => {
   const menuData = useMenu();
   const [showIndex, setShowIndex] = useState(0);
   const [prevClickIndex, setPrevClickIndex] = useState(null);
@@ -143,3 +143,5 @@ export default RestaurantMenu = () => {
     </div>
   );
 };
+
+export default RestaurantMenu;
