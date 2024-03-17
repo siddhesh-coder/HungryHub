@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../utils/Store/authSlice";
 import useNotify from "../../hooks/useNotify.js";
 import toast from "react-hot-toast";
+import companyLogo from "../../assets/company.webp";
 
 const initialValues = {
   email: "",
@@ -49,7 +50,7 @@ const Login = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="w-auto h-10 mx-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            src={companyLogo}
             alt="Your Company"
           />
           <h2 className="mt-10 text-2xl font-bold leading-9 tracking-tight text-center text-gray-900">

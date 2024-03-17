@@ -4,6 +4,7 @@ import { SignUpValidate } from "../../utils/AuthValidate";
 import InputField from "../../HOC/InputField";
 import Credentials from "./Credentials";
 import useNotify from "../../hooks/useNotify";
+import companyLogo from "../../assets/company.webp";
 
 const initialValues = {
   name: "",
@@ -44,7 +45,7 @@ export default function SignUp() {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="w-auto h-10 mx-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            src={companyLogo}
             alt="Your Company"
           />
           <h2
