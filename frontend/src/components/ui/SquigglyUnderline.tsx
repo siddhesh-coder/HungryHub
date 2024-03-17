@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Building2,
@@ -11,18 +10,24 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { handleOpenCart } from "../../utils/Store/toggleCartSlice";
 
-const navigation = [
+interface NavigationItem {
+  name: string;
+  link: string;
+  icon: React.ReactNode;
+}
+
+const navigation: NavigationItem[] = [
   { name: "Home", link: "/", icon: <Home /> },
   { name: "About", link: "aboutus", icon: <Building2 /> },
   { name: "Help", link: "contactus", icon: <Info /> },
   { name: "Bag", link: "", icon: <ShoppingBag /> },
 ];
 
-export const SquigglyUnderline = () => {
+export const SquigglyUnderline: React.FC = () => {
   const dispatch = useDispatch();
-  const CartCount = useSelector((store) => store.cart.totalQty);
-  const isAuthenticated = useSelector((store) => store.auth.isAuthenticated);
-  const [selectedLink, setSelectedLink] = useState("Home");
+  const CartCount: number = useSelector((store: any) => store.cart.totalQty);
+  const isAuthenticated: boolean = useSelector((store: any) => store.auth.isAuthenticated);
+  const [selectedLink, setSelectedLink] = useState<string>("Home");
   const navigate = useNavigate();
   
   const handleOpen = () => {
@@ -33,12 +38,12 @@ export const SquigglyUnderline = () => {
     if (!isAuthenticated) {
       navigate("/login");
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, navigate]);
 
   return (
     <div className="flex items-center gap-16 mr-12">
-      {navigation.map((item) => {
-        const isSelected = item.name === selectedLink;
+      {navigation.map((item: NavigationItem) => {
+        const isSelected: boolean = item.name === selectedLink;
         return (
           <Link
             key={item.name}
