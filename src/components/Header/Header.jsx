@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import companyLogo from "../../assets/company.webp";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SquigglyUnderline } from "../ui/SquigglyUnderline";
 import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
@@ -8,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../utils/Store/authSlice";
 import useNotify from "../../hooks/useNotify";
 
-export default Header = () => {
+const Header = () => {
   const [active, setActive] = useState(null);
   const dispatch = useDispatch();
   const notify = useNotify();
@@ -40,3 +39,5 @@ export default Header = () => {
     </header>
   );
 };
+
+export default Header;
