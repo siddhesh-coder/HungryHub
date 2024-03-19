@@ -100,7 +100,7 @@ const appRouter = createBrowserRouter([
     ),
   },
   {
-    path: "paymentSuccess",
+    path: "/paymentSuccess",
     element: <PaymentSuccess />,
   },
   {
