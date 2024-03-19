@@ -21,7 +21,13 @@ const Header = () => {
     <header className="fixed top-0 left-0 z-30 flex items-center justify-between w-full h-20 p-4 pr-10 text-center bg-white shadow-lg">
       <div>
         <Link to={"/"}>
-          <img className="w-32 h-10 mx-16" src={companyLogo} loading="lazy" alt="company_logo"/>
+          <img
+            className="mx-16"
+            src={companyLogo}
+            loading="lazy"
+            alt="company_logo"
+            style={{ width: "128px", height: "40px" }}
+          />
         </Link>
       </div>
       <div className="flex">
@@ -31,7 +37,9 @@ const Header = () => {
             <div className="flex flex-col space-y-1 text-sm">
               <HoveredLink to={"/login"}>Login</HoveredLink>
               <HoveredLink to={"/signup"}>Sign up</HoveredLink>
-              <HoveredLink data-testid="logout" onClick={handleLogout}>Logout</HoveredLink>
+              <HoveredLink data-testid="logout" onClick={handleLogout}>
+                Logout
+              </HoveredLink>
             </div>
           </MenuItem>
         </Menu>
