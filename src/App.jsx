@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import { Provider } from "react-redux";
 
 import Header from "./components/Header/Header";
 import FoodCards from "./components/Home/FoodCards";
@@ -10,11 +12,10 @@ import MainCategory from "./components/Home/MainCategory";
 import useOnlineStatus from "./hooks/useOnlineStatus";
 import InternetConnectionMessage from "./components/InternetConnectionMessage/InternetConnectionMessage";
 import FoodLoader from "./components/Home/FoodLoader";
-import { Toaster } from 'react-hot-toast';
-import { Provider } from "react-redux";
 import appStore from "./utils/Store/appStore";
 import PaymentSuccess from "./components/PaymentStats/PaymentSuccess";
 import Footer from "./components/Footer/Footer";
+import Loader from "./components/Loader/Loader";
 
 const RestaurantMenu = lazy(() => import("./components/Menu/RestaurantMenu"));
 const AboutUs = lazy(() => import("./components/Header/AboutUs"));
@@ -32,7 +33,7 @@ const AppParent = () => {
           <>
             <Header />
             <Outlet />
-            <Footer/>
+            <Footer />
             <FoodCart />
           </>
         ) : (
@@ -55,7 +56,7 @@ const appRouter = createBrowserRouter([
       {
         path: "aboutus",
         element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<Loader />}>
             <AboutUs />
           </Suspense>
         ),
@@ -63,7 +64,7 @@ const appRouter = createBrowserRouter([
       {
         path: "contactus",
         element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<Loader />}>
             <ContactUs />
           </Suspense>
         ),
@@ -85,7 +86,7 @@ const appRouter = createBrowserRouter([
   {
     path: "signup",
     element: (
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<Loader />}>
         <SignUp />
       </Suspense>
     ),
@@ -93,14 +94,14 @@ const appRouter = createBrowserRouter([
   {
     path: "login",
     element: (
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<Loader />}>
         <Login />
       </Suspense>
     ),
   },
   {
     path: "paymentSuccess",
-    element: <PaymentSuccess/>
+    element: <PaymentSuccess />,
   },
   {
     errorElement: <Errors />,
@@ -109,10 +110,10 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <>
     <Provider store={appStore}>
       <RouterProvider router={appRouter} />
     </Provider>
     <Toaster />
-  </React.StrictMode>
+  </>
 );
