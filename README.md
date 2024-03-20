@@ -41,7 +41,7 @@ npm start
 3. To run tests.
 
 ```bash
- npm watch-test
+npm watch-test
 ```
 
 **Components:**
