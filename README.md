@@ -38,6 +38,7 @@ git clone https://github.com/siddhesh-coder/HungryHub.git
 npm install
 npm start
 ```
+
 3. To run tests.
 
 ```bash
