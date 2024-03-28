@@ -19,18 +19,18 @@ const useMenu = () => {
         cuisines,
         sla,
         aggregatedDiscountInfo,
-      } = menuInfo?.cards[0]?.card?.card?.info || {};
+      } = menuInfo?.cards[2]?.card?.card?.info || {};
       const { minDeliveryTime, maxDeliveryTime, lastMileTravelString } =
         sla || {};
       const cuisine = cuisines;
       const discount = aggregatedDiscountInfo?.descriptionList || [];
       const { carousel, title } =
-        menuInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+        menuInfo.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
           ?.card || {};
 
       let menutabs = [];
       const regularCards =
-        menuInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+        menuInfo.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
       if (Array.isArray(regularCards)) {
         menutabs = regularCards.filter(
           (c) =>
